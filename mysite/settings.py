@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 APPEND_SLASH = True
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-"""
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -86,16 +87,17 @@ DATABASES = {
         'HOST': '',
         'PORT': '',
     }
-}
+}'''
 
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'mysite',
         'USER': 'nikil',
-        'PASSWORD': '',
-        
+        'PASSWORD': 'nikil@123',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -141,8 +143,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+
+DATABASES['default'] = dj_database_url.config(default='postgres://nikil:nikil@123@localhost/mysite') 
+
+
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
