@@ -14,7 +14,7 @@ Pillow==4.0.0
 pycurl==7.43.0
 pyliblzma==0.5.3
 pyscreenshot==0.4.2
-pysqlite==1.0.1
+pysqlite==2.7.0
 python-dateutil==2.6.0
 pytz==2016.10
 rpm-python==4.12.0.1
