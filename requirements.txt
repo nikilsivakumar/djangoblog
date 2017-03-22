@@ -17,7 +17,7 @@ pyscreenshot==0.4.2
 pysqlite==2.7.0
 python-dateutil==2.6.0
 pytz==2016.10
-rpm-python==4.12.0.1
+rpm-python==2.7.13
 scour==0.32
 six==1.10.0
 sqlparse==0.1.18
