@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 APPEND_SLASH = True
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -87,6 +87,18 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mysite',
+        'USER': 'nikil',
+        'PASSWORD': '',
+        
+    }
+}
+
 
 
 # Password validation
@@ -129,7 +141,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
 
@@ -143,3 +154,7 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+
+
+
